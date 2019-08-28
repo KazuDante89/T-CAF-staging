@@ -60,6 +60,9 @@ static ssize_t power_supply_show_property(struct device *dev,
 		"Unknown", "Good", "Overheat", "Dead", "Over voltage",
 		"Unspecified failure", "Cold", "Watchdog timer expire",
 		"Safety timer expire",
+#ifdef CONFIG_MACH_LONGCHEER
+		"Low_Cool",
+#endif
 		"Warm", "Cool", "Hot"
 	};
 	static char *technology_text[] = {
@@ -316,6 +319,9 @@ static struct device_attribute power_supply_attrs[] = {
 	POWER_SUPPLY_ATTR(parallel_fcc_max),
 	POWER_SUPPLY_ATTR(min_icl),
 	POWER_SUPPLY_ATTR(fg_reset_clock),
+#ifdef CONFIG_MACH_LONGCHEER
+	POWER_SUPPLY_ATTR(rerun_apsd),
+#endif
 	/* Local extensions of type int64_t */
 	POWER_SUPPLY_ATTR(charge_counter_ext),
 	/* Properties of type `const char *' */
