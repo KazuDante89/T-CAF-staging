@@ -75,7 +75,7 @@ static const char *reset_reasons[RS_REASON_MAX] = {
 	[RS_REASON_EVENT_KPANIC]        = "kpanic",
 	[RS_REASON_EVENT_NORMAL]        = "reboot",
 	[RS_REASON_EVENT_OTHER]         = "other",
-#if defined(CONFIG_MACH_XIAOMI_JASWAY) || defined(CONFIG_MACH_XIAOMI_LAVENDER)
+#if defined(CONFIG_MACH_XIAOMI_WAYNE) || defined(CONFIG_MACH_XIAOMI_LAVENDER)
 	[RS_REASON_EVENT_DVE]		= "dm_verity_enforcing",
 	[RS_REASON_EVENT_DVL]		= "dm_verity_logging",
 	[RS_REASON_EVENT_DVK]		= "dm_verity_keysclear",

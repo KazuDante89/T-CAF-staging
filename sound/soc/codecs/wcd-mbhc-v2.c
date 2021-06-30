@@ -54,7 +54,7 @@
 #define FAKE_REM_RETRY_ATTEMPTS 3
 #define MAX_IMPED 60000
 
-#ifdef CONFIG_MACH_XIAOMI_JASWAY
+#ifdef CONFIG_MACH_XIAOMI_WAYNE
 #define WCD_MBHC_BTN_PRESS_COMPL_TIMEOUT_MS  650
 #else
 #define WCD_MBHC_BTN_PRESS_COMPL_TIMEOUT_MS  50
@@ -67,7 +67,7 @@
 struct switch_dev sdev;
 #endif
 static int det_extn_cable_en;
-#if defined(CONFIG_MACH_XIAOMI_WHYRED) || defined(CONFIG_MACH_XIAOMI_JASWAY) || defined(CONFIG_MACH_XIAOMI_TULIP)
+#if defined(CONFIG_MACH_XIAOMI_WHYRED) || defined(CONFIG_MACH_XIAOMI_WAYNE) || defined(CONFIG_MACH_XIAOMI_TULIP)
 /*Add for selfie stick not work  tangshouxing 9/6*/
 static void wcd_enable_mbhc_supply(struct wcd_mbhc *mbhc,
 			enum wcd_mbhc_plug_type plug_type);
@@ -916,7 +916,7 @@ static void wcd_mbhc_find_plug_and_report(struct wcd_mbhc *mbhc,
 						SND_JACK_HEADPHONE);
 			if (mbhc->current_plug == MBHC_PLUG_TYPE_HEADSET)
 				wcd_mbhc_report_plug(mbhc, 0, SND_JACK_HEADSET);
-#if defined(CONFIG_MACH_XIAOMI_WHYRED) || defined(CONFIG_MACH_XIAOMI_JASWAY) || defined(CONFIG_MACH_XIAOMI_TULIP)
+#if defined(CONFIG_MACH_XIAOMI_WHYRED) || defined(CONFIG_MACH_XIAOMI_WAYNE) || defined(CONFIG_MACH_XIAOMI_TULIP)
 			/*
 			 * calculate impedance detection
 			 * If Zl and Zr > 20k then it is special accessory
@@ -1603,7 +1603,7 @@ enable_supply:
 #endif
 	if (mbhc->mbhc_cb->mbhc_micbias_control)
 		wcd_mbhc_update_fsm_source(mbhc, plug_type);
-#if defined(CONFIG_MACH_XIAOMI_WHYRED) || defined(CONFIG_MACH_XIAOMI_JASWAY) || defined(CONFIG_MACH_XIAOMI_TULIP)
+#if defined(CONFIG_MACH_XIAOMI_WHYRED) || defined(CONFIG_MACH_XIAOMI_WAYNE) || defined(CONFIG_MACH_XIAOMI_TULIP)
 	else{
 		/*Add for selfie stick not work  tangshouxing 9/6*/
 		if (mbhc->impedance_detect) {

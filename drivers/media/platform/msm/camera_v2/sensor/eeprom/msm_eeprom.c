@@ -1633,7 +1633,7 @@ static long msm_eeprom_subdev_fops_ioctl32(struct file *file, unsigned int cmd,
 
 #endif
 #ifdef CONFIG_MACH_LONGCHEER
-#ifndef CONFIG_MACH_XIAOMI_JASWAY
+#ifndef CONFIG_MACH_XIAOMI_WAYNE
 #if defined(CONFIG_MACH_XIAOMI_LAVENDER)
 static camera_vendor_module_id lavender_s5k5e8_ofilm_i_get_otp_vendor_module_id
 #elif defined(CONFIG_MACH_XIAOMI_WHYRED)
@@ -1782,7 +1782,7 @@ static camera_vendor_module_id tulip_ov02a10_sunny_i_get_otp_vendor_module_id
 	return mid;
 }
 #endif //CONFIG_MACH_XIAOMI_WHYRED
-#endif //CONFIG_MACH_XIAOMI_JASWAY
+#endif //CONFIG_MACH_XIAOMI_WAYNE
 
 static uint8_t get_otp_vendor_module_id(struct msm_eeprom_ctrl_t *e_ctrl, const char *eeprom_name)
 {

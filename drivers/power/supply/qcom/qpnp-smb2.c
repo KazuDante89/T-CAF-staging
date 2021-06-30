@@ -52,7 +52,7 @@ union power_supply_propval lct_therm_india_level = {1,};
 
 bool lct_backlight_off;
 int LctIsInCall = 0;
-#ifdef CONFIG_MACH_XIAOMI_JASWAY
+#ifdef CONFIG_MACH_XIAOMI_WAYNE
 int LctIsInVideo = 0;
 #endif
 int LctThermal = 0;
@@ -2384,7 +2384,7 @@ static void smb2_create_debugfs(struct smb2 *chip)
 
 #ifdef CONFIG_MACH_LONGCHEER
 #ifdef THERMAL_CONFIG_FB
-#ifdef CONFIG_MACH_XIAOMI_JASWAY
+#ifdef CONFIG_MACH_XIAOMI_WAYNE
 static ssize_t lct_thermal_video_status_show(struct device *dev,
 		struct device_attribute *attr, char *buf)
 {
@@ -2433,7 +2433,7 @@ static ssize_t lct_thermal_call_status_store(struct device *dev,
 static struct device_attribute attrs2[] = {
 	__ATTR(thermalcall, S_IRUGO | S_IWUSR,
 			lct_thermal_call_status_show, lct_thermal_call_status_store),
-#ifdef CONFIG_MACH_XIAOMI_JASWAY
+#ifdef CONFIG_MACH_XIAOMI_WAYNE
 	__ATTR(thermalvideo, S_IRUGO | S_IWUSR,
 			lct_thermal_video_status_show, lct_thermal_video_status_store),
 #endif
@@ -2464,7 +2464,7 @@ static void thermal_fb_notifier_resume_work(struct work_struct *work)
 	} else if (LctIsInCall)
 #elif defined(CONFIG_MACH_XIAOMI_TULIP)
 	if (LctIsInCall)
-#elif defined(CONFIG_MACH_XIAOMI_JASWAY) || defined(CONFIG_MACH_XIAOMI_LAVENDER)
+#elif defined(CONFIG_MACH_XIAOMI_WAYNE) || defined(CONFIG_MACH_XIAOMI_LAVENDER)
 	if ((lct_backlight_off) && (LctIsInCall == 0)) {
 		if (lct_therm_lvl_reserved.intval >= 2)
 			smblib_set_prop_system_temp_level(chg,

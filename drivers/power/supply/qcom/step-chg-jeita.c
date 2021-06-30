@@ -126,7 +126,7 @@ static struct jeita_fcc_cfg jeita_fcc_config = {
 	.fcc_cfg	= {
 		/* TEMP_LOW	TEMP_HIGH	FCC */
 #ifdef CONFIG_MACH_LONGCHEER
-#if defined(CONFIG_MACH_XIAOMI_JASWAY)
+#if defined(CONFIG_MACH_XIAOMI_WAYNE)
 		{0,	    	50,	    	300000},
 		{51,		150,		900000},
 		{151,		450,		2900000},
@@ -305,7 +305,7 @@ reschedule:
 	return (STEP_CHG_HYSTERISIS_DELAY_US - elapsed_us + 1000);
 }
 
-#ifdef CONFIG_MACH_XIAOMI_JASWAY
+#ifdef CONFIG_MACH_XIAOMI_WAYNE
 extern union power_supply_propval lct_therm_lvl_reserved;
 extern int LctIsInVideo;
 extern int hwc_check_india;
@@ -321,7 +321,7 @@ static int handle_jeita(struct step_chg_info *chip)
 	int temp = 1;
 #endif
 
-#ifdef CONFIG_MACH_XIAOMI_JASWAY
+#ifdef CONFIG_MACH_XIAOMI_WAYNE
 	if (hwc_check_india) {
 		pr_err("lct video LctIsInVideo=%d, lct_therm_lvl_reserved=%d\n",
 				LctIsInVideo, lct_therm_lvl_reserved.intval);
